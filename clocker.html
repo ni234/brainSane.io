@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>New HMTL document by NewJect</title>
+	
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel = "stylesheet" href ="reset.css">
+	<style>
+		#clockDiv {
+			height: 150px;
+			width:400px;
+			box-shadow:  0 0 25px;
+			margin: auto;
+			border-radius:10px;
+			background-color: darkgray;
+			border: 3.7px inset green;
+			background-color: black;
+			color: whitesmoke;
+			background-image: linear-gradient rgb(0,100,0,25));
+			
+		}
+		.container-fluid {
+		padding-top: 150px;
+			
+}
+		h1 {
+			font-family: Tahoma;
+			font-size: 300%;
+			text-align: center;
+			letter-spacing: 5px;
+			padding: 45px 0 0 0;
+		}
+		.well {
+			height: 40px;
+			width: 90px;
+		}
+		.jumbotron {
+			background-color: salmon;
+			height: 150px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body onload="dispTime()">
+<div class="container-fluid">
+<div>
+	
+	<h1 id="clockDiv">
+	</h1>
+		
+
+	</div>
+	</div>
+<script>
+	function dispTime() {
+	var timeR = new Date();
+	var h = timeR.getHours();
+	var m = timeR.getMinutes();
+	var s = timeR.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById("clockDiv").innerHTML = 
+		// set clockDiv to display h,m,s //
+		h +	":" + m + ":" + s;
+		var t = setTimeout(startTime, 500);
+		}
+	
+	var myVar = setInterval(myTimer,1000);
+	function myTimer() {
+		var d = new Date;
+		document.getElementById('clockDiv').innerHTML = d.toLocaleTimeString();
+	}
+	
+	
+	function checkTime(i) {
+		
+		if (i < 10) {i = "0" + i};
+		return i;
+	}
+	</script>
+	</body>
+</html>
